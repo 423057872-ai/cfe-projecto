@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>CFE - Pagos en Línea</title>
+    <style>
+        .payment-method {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .payment-method:hover {
+            border-color: #28a745;
+            background-color: #f8f9fa;
+        }
+        .payment-method.selected {
+            border-color: #28a745;
+            background-color: #e8f5e8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.html">
+                ⚡ CFE
+            </a>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="1.html">Servicios</a>
+                <a class="nav-link" href="2.html">Medición</a>
+                <a class="nav-link active" href="pagos.html">Pagos</a>
+                <a class="nav-link" href="3.html">Atención</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container-fluid bg-success py-4">
+        <div class="container text-white">
+            <h1 class="h2 font-weight-bold">💳 Pagos en Línea</h1>
+            <p class="mb-0">Pague su recibo de forma segura y rápida</p>
+        </div>
+    </div>
+
+    <!-- Resumen de Estado -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card border-warning">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title">Recibo Pendiente</h5>
+                                <p class="card-text mb-1">
+                                    <strong>Periodo:</strong> 22 Ago - 23 Oct 2025<br>
+                                    <strong>Vence:</strong> 19 Nov 2025<br>
+                                    <strong>Número de servicio:</strong> 970010100681
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <h3 class="text-warning">$450.00</h3>
+                                <span class="badge badge-warning">Pendiente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-success">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Consumo Actual</h5>
+                        <h3 class="text-success">175 kWh</h3>
+                        <small class="text-muted">+5% vs período anterior</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Pago -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">💳 Realizar Pago</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="paymentForm">
+                            <!-- Métodos de Pago -->
+                            <div class="form-group">
+                                <label class="font-weight-bold">Seleccione método de pago</label>
+                                
+                                <div class="payment-method" onclick="selectPayment('tarjeta')">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="tarjeta" value="tarjeta">
+                                        <label class="form-check-label font-weight-bold" for="tarjeta">
+                                            💳 Tarjeta de Crédito/Débito
+                                        </label>
+                                    </div>
+                                    <div class="mt-2" id="tarjetaDetails" style="display: none;">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="cardNumber">Número de tarjeta</label>
+                                                <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="expiryDate">Fecha de expiración</label>
+                                                <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="cvv">CVV</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="123">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="payment-method" onclick="selectPayment('transferencia')">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="transferencia" value="transferencia">
+                                        <label class="form-check-label font-weight-bold" for="transferencia">
+                                            🏦 Transferencia Bancaria
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="payment-method" onclick="selectPayment('efectivo')">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="efectivo" value="efectivo">
+                                        <label class="form-check-label font-weight-bold" for="efectivo">
+                                            💰 Pago en Efectivo
+                                        </label>
+                                    </div>
+                                    <div class="mt-2" id="efectivoDetails" style="display: none;">
+                                        <p class="text-muted small">
+                                            Generaremos una referencia para que pague en OXXO, 7-Eleven, 
+                                            Farmacias Guadalajara u otros establecimientos autorizados.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Información de Facturación -->
+                            <div class="form-group">
+                                <label class="font-weight-bold">Información de Facturación</label>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="billingName">Nombre completo</label>
+                                        <input type="text" class="form-control" id="billingName" value="Juan Pérez García" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="billingEmail">Correo electrónico</label>
+                                        <input type="email" class="form-control" id="billingEmail" value="juan.perez@email.com" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Resumen del Pago -->
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">Resumen del Pago</h6>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Subtotal energía:</span>
+                                        <span>$320.88</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>IVA (16%):</span>
+                                        <span>$51.34</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Otros conceptos:</span>
+                                        <span>$77.78</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between font-weight-bold">
+                                        <span>Total a pagar:</span>
+                                        <span class="h5 text-success">$450.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        Acepto los <a href="#">términos y condiciones</a> del servicio
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg btn-block">
+                                💳 Realizar Pago de $450.00
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opciones Alternativas de Pago -->
+    <div class="container my-5">
+        <h3 class="text-center mb-4">📍 Otras Opciones de Pago</h3>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="h1 text-primary">🏪</div>
+                        <h5>Tiendas de Conveniencia</h5>
+                        <p>OXXO, 7-Eleven, Farmacias Guadalajara</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="h1 text-info">🏦</div>
+                        <h5>Bancos</h5>
+                        <p>BBVA, Banamex, Santander, HSBC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="h1 text-success">⚡</div>
+                        <h5>Oficinas CFE</h5>
+                        <p>Ventanillas y CFEMáticos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Comisión Federal de Electricidad | Teléfono: 071 | Atención 24/7</p>
+        </div>
+    </footer>
+
+    <script>
+        function selectPayment(method) {
+            // Remover selección anterior
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // Ocultar todos los detalles
+            document.querySelectorAll('[id$="Details"]').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Seleccionar nuevo método
+            const selectedMethod = document.querySelector(`input[value="${method}"]`);
+            selectedMethod.checked = true;
+            selectedMethod.closest('.payment-method').classList.add('selected');
+            
+            // Mostrar detalles del método seleccionado
+            const detailsElement = document.getElementById(`${method}Details`);
+            if (detailsElement) {
+                detailsElement.style.display = 'block';
+            }
+        }
+
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Pago procesado exitosamente! Se ha enviado el comprobante a su correo electrónico.');
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

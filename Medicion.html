@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>CFE - Medición de Lectura</title>
+    <style>
+        .step-number {
+            background: #28a745;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.html">
+                ⚡ CFE
+            </a>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="1.html">Servicios</a>
+                <a class="nav-link active" href="2.html">Medición</a>
+                <a class="nav-link" href="pagos.html">Pagos</a>
+                <a class="nav-link" href="3.html">Atención</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container-fluid bg-success py-4">
+        <div class="container text-white">
+            <h1 class="h2 font-weight-bold">📊 Medición de Lectura</h1>
+            <p class="mb-0">Proceso de toma de lectura y medición del consumo eléctrico</p>
+        </div>
+    </div>
+
+    <!-- Estadísticas Rápidas -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card border-success">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">📈 Lectura Actual</h5>
+                        <h3 class="text-success">02972 kWh</h3>
+                        <small class="text-muted">Período actual</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card border-info">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">📅 Próxima Lectura</h5>
+                        <h3 class="text-info">23 Nov 2025</h3>
+                        <small class="text-muted">Fecha estimada</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card border-warning">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">⚡ Consumo Promedio</h5>
+                        <h3 class="text-warning">175 kWh/mes</h3>
+                        <small class="text-muted">Últimos 6 meses</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proceso de Toma de Lectura -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Proceso de Toma de Lectura</h2>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">📋 Pasos del Proceso</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <span class="step-number">1</span>
+                            <strong>Programación de Ruta</strong>
+                            <p class="mb-1">CFE genera calendario de lecturas y asigna rutas al personal técnico.</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="step-number">2</span>
+                            <strong>Identificación del Domicilio</strong>
+                            <p class="mb-1">El técnico verifica dirección y número de servicio.</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="step-number">3</span>
+                            <strong>Acceso al Medidor</strong>
+                            <p class="mb-1">Se verifica que el medidor esté accesible y en condiciones.</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="step-number">4</span>
+                            <strong>Captura de Lectura</strong>
+                            <p class="mb-1">Registro de datos en dispositivo móvil con validación automática.</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="step-number">5</span>
+                            <strong>Sincronización con Sistema CFE</strong>
+                            <p class="mb-1">Los datos se envían al sistema central para facturación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">🛠️ Equipo y Tecnología</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <div class="h1">📱</div>
+                                        <h6>Terminal Portátil</h6>
+                                        <small>Dispositivo móvil para captura de lecturas</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <div class="h1">🔍</div>
+                                        <h6>Sonda Óptica</h6>
+                                        <small>Para medidores digitales avanzados</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h6 class="mt-3">Tipos de Medidores:</h6>
+                        <ul class="list-unstyled">
+                            <li>✅ <strong>Analógico:</strong> Lectura visual directa</li>
+                            <li>✅ <strong>Digital:</strong> Display numérico</li>
+                            <li>✅ <strong>Inteligente:</strong> Transmisión automática</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información Detallada -->
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">ℹ️ Información Importante</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <strong>Nota:</strong> Si el técnico no puede acceder al medidor, se generará una lectura 
+                    estimada basada en consumos históricos. Puede solicitar una rectificación si la estimación 
+                    no corresponde a su consumo real.
+                </div>
+                
+                <h6>¿Qué hacer si...</h6>
+                <ul>
+                    <li><strong>No llegó el técnico?</strong> Espere hasta 2 días hábiles después de la fecha programada</li>
+                    <li><strong>El medidor está dañado?</strong> Reporte inmediatamente en Atención a Clientes</li>
+                    <li><strong>La lectura parece incorrecta?</strong> Solicite verificación en el mismo período</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Comisión Federal de Electricidad | Teléfono: 071 | Atención 24/7</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

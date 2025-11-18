@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>CFE - Atención a Clientes</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.html">
+                ⚡ CFE
+            </a>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="1.html">Servicios</a>
+                <a class="nav-link" href="2.html">Medición</a>
+                <a class="nav-link" href="pagos.html">Pagos</a>
+                <a class="nav-link active" href="3.html">Atención</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container-fluid bg-success py-4">
+        <div class="container text-white">
+            <h1 class="h2 font-weight-bold">📞 Atención a Clientes</h1>
+            <p class="mb-0">Estamos aquí para ayudarte. Contáctanos por cualquier duda o problema.</p>
+        </div>
+    </div>
+
+    <!-- Canales de Contacto -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Canales de Atención</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center border-danger">
+                    <div class="card-body">
+                        <div class="h1 text-danger">📞</div>
+                        <h5 class="card-title">Teléfonos</h5>
+                        <p class="card-text">
+                            <strong>Atención a Clientes:</strong><br>071
+                        </p>
+                        <p class="card-text">
+                            <strong>Emergencias 24/7:</strong><br>066
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center border-warning">
+                    <div class="card-body">
+                        <div class="h1 text-warning">🕒</div>
+                        <h5 class="card-title">Horarios</h5>
+                        <p class="card-text">
+                            <strong>Lunes a Viernes:</strong><br>8:00 - 18:00 hrs
+                        </p>
+                        <p class="card-text">
+                            <strong>Sábados:</strong><br>9:00 - 13:00 hrs
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center border-info">
+                    <div class="card-body">
+                        <div class="h1 text-info">💬</div>
+                        <h5 class="card-title">Chat en Línea</h5>
+                        <p class="card-text">
+                            Atención inmediata<br>vía chat
+                        </p>
+                        <button class="btn btn-info">Iniciar Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">✉️ Formulario de Contacto</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="contactEmail">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="contactEmail" placeholder="usuario@ejemplo.com" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="contactPhone">Teléfono</label>
+                                    <input type="tel" class="form-control" id="contactPhone" placeholder="55 1234 5678" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputAddress">Dirección</label>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="Calle y número">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputCity">Ciudad</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputState">Estado</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Seleccionar estado</option>
+                                        <option>Ciudad de México</option>
+                                        <option>Estado de México</option>
+                                        <option>Jalisco</option>
+                                        <option>Nuevo León</option>
+                                        <option>Veracruz</option>
+                                        <option>Puebla</option>
+                                        <option>Chihuahua</option>
+                                        <option>Querétaro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputZip">Código Postal</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="serviceType">Tipo de Servicio</label>
+                                <select class="form-control" id="serviceType">
+                                    <option>Doméstico</option>
+                                    <option>Comercial</option>
+                                    <option>Industrial</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="messageTopic">Motivo del mensaje</label>
+                                <textarea class="form-control" id="messageTopic" rows="4" placeholder="Describa detalladamente el motivo de su contacto..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preguntas Frecuentes -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">❓ Preguntas Frecuentes</h2>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                            ¿Por qué no tengo servicio de luz?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        Puede deberse a varias razones: falta de pago, falla en el equipo de medición, 
+                        mantenimiento programado en la red o una falla general en su zona. Verifique 
+                        si sus vecinos tienen el mismo problema y reporte la falla al 071.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
+                            ¿Cuánto tiempo tarda en atenderse mi reporte?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <strong>Reporte por falla de luz:</strong><br>
+                        • 1-4 horas para problemas sencillos<br>
+                        • 4-24 horas para problemas mayores<br>
+                        • Hasta 48 horas por daños severos<br><br>
+
+                        <strong>Corrección de recibo:</strong><br>
+                        • 3-10 días hábiles para respuesta<br><br>
+
+                        <strong>Reporte de medidor:</strong><br>
+                        • 1-5 días para revisión técnica
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">
+                            ¿Dónde puedo pagar mi recibo?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Puede pagar su recibo de CFE en:<br><br>
+                        • <strong>En línea:</strong> Portal CFE o aplicación CFE Contigo<br>
+                        • <strong>Bancos:</strong> La mayoría de instituciones bancarias<br>
+                        • <strong>Tiendas:</strong> OXXO, 7-Eleven, Farmacias Guadalajara<br>
+                        • <strong>Oficinas CFE:</strong> Ventanillas y CFEMáticos<br>
+                        • <strong>Aplicaciones:</strong> Mercado Pago, BBVA, etc.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacto WhatsApp -->
+    <div class="container text-center my-5">
+        <div class="card border-success">
+            <div class="card-body">
+                <h5 class="card-title">💬 WhatsApp Business</h5>
+                <p class="card-text">Atención personalizada a través de WhatsApp</p>
+                <a href="https://wa.me/525538933010" class="btn btn-success btn-lg">
+                    📱 Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Comisión Federal de Electricidad | Teléfono: 071 | Atención 24/7</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
